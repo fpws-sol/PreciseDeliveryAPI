@@ -1,0 +1,268 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-', '-g', 'pm2' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ '-', null ]
+6 verbose cache add name=undefined spec="-" args=["-",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '-',
+7 verbose parsed url   path: '-',
+7 verbose parsed url   href: '-' }
+8 verbose cache add [ 'pm2', null ]
+9 verbose cache add name=undefined spec="pm2" args=["pm2",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'pm2',
+10 verbose parsed url   path: 'pm2',
+10 verbose parsed url   href: 'pm2' }
+11 silly lockFile 3bc15c8a- -
+12 verbose lock - /root/.npm/3bc15c8a-.lock
+13 silly lockFile b1fbedd8-pm2 pm2
+14 verbose lock pm2 /root/.npm/b1fbedd8-pm2.lock
+15 silly lockFile 3bc15c8a- -
+16 silly lockFile 3bc15c8a- -
+17 silly lockFile b1fbedd8-pm2 pm2
+18 silly lockFile b1fbedd8-pm2 pm2
+19 verbose addNamed [ '-', '' ]
+20 verbose addNamed [ null, '*' ]
+21 silly lockFile c75fe0d4- -@
+22 verbose lock -@ /root/.npm/c75fe0d4-.lock
+23 verbose addNamed [ 'pm2', '' ]
+24 verbose addNamed [ null, '*' ]
+25 silly lockFile d1072219-pm2 pm2@
+26 verbose lock pm2@ /root/.npm/d1072219-pm2.lock
+27 silly addNameRange { name: '-', range: '*', hasData: false }
+28 silly addNameRange { name: 'pm2', range: '*', hasData: false }
+29 verbose request where is /-
+30 verbose request registry https://registry.npmjs.org/
+31 verbose request id aa8b5ee6a95303b3
+32 verbose url raw /-
+33 verbose url resolving [ 'https://registry.npmjs.org/', './-' ]
+34 verbose url resolved https://registry.npmjs.org/-
+35 verbose request where is https://registry.npmjs.org/-
+36 info trying registry request attempt 1 at 18:20:06
+37 http GET https://registry.npmjs.org/-
+38 verbose request where is /pm2
+39 verbose request registry https://registry.npmjs.org/
+40 verbose url raw /pm2
+41 verbose url resolving [ 'https://registry.npmjs.org/', './pm2' ]
+42 verbose url resolved https://registry.npmjs.org/pm2
+43 verbose request where is https://registry.npmjs.org/pm2
+44 info trying registry request attempt 1 at 18:20:06
+45 http GET https://registry.npmjs.org/pm2
+46 http 200 https://registry.npmjs.org/pm2
+47 silly registry.get cb [ 200,
+47 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+47 silly registry.get     etag: '"26TQ933BRNVNZKTM7U31XTQSE"',
+47 silly registry.get     'content-type': 'application/json',
+47 silly registry.get     'cache-control': 'max-age=300',
+47 silly registry.get     'content-length': '372341',
+47 silly registry.get     'accept-ranges': 'bytes',
+47 silly registry.get     date: 'Tue, 29 Dec 2015 18:20:06 GMT',
+47 silly registry.get     via: '1.1 varnish',
+47 silly registry.get     age: '66',
+47 silly registry.get     connection: 'keep-alive',
+47 silly registry.get     'x-served-by': 'cache-sin6921-SIN',
+47 silly registry.get     'x-cache': 'HIT',
+47 silly registry.get     'x-cache-hits': '1',
+47 silly registry.get     'x-timer': 'S1451413206.560214,VS0,VE1',
+47 silly registry.get     vary: 'Accept' } ]
+48 silly addNameRange number 2 { name: 'pm2', range: '*', hasData: true }
+49 silly addNameRange versions [ 'pm2',
+49 silly addNameRange   [ '0.4.0',
+49 silly addNameRange     '0.4.1',
+49 silly addNameRange     '0.4.2',
+49 silly addNameRange     '0.4.3',
+49 silly addNameRange     '0.4.4',
+49 silly addNameRange     '0.4.5',
+49 silly addNameRange     '0.4.6',
+49 silly addNameRange     '0.4.7',
+49 silly addNameRange     '0.4.8',
+49 silly addNameRange     '0.4.10',
+49 silly addNameRange     '0.4.11',
+49 silly addNameRange     '0.4.12',
+49 silly addNameRange     '0.4.13',
+49 silly addNameRange     '0.4.14',
+49 silly addNameRange     '0.5.0',
+49 silly addNameRange     '0.5.1',
+49 silly addNameRange     '0.5.2',
+49 silly addNameRange     '0.5.3',
+49 silly addNameRange     '0.5.4',
+49 silly addNameRange     '0.5.5',
+49 silly addNameRange     '0.5.6',
+49 silly addNameRange     '0.5.7',
+49 silly addNameRange     '0.6.2',
+49 silly addNameRange     '0.6.3',
+49 silly addNameRange     '0.6.4',
+49 silly addNameRange     '0.6.5',
+49 silly addNameRange     '0.6.6',
+49 silly addNameRange     '0.6.7',
+49 silly addNameRange     '0.6.8',
+49 silly addNameRange     '0.6.9',
+49 silly addNameRange     '0.6.10',
+49 silly addNameRange     '0.6.11',
+49 silly addNameRange     '0.6.12',
+49 silly addNameRange     '0.6.13',
+49 silly addNameRange     '0.6.14',
+49 silly addNameRange     '0.6.15',
+49 silly addNameRange     '0.7.0',
+49 silly addNameRange     '0.7.1',
+49 silly addNameRange     '0.7.2',
+49 silly addNameRange     '0.7.3',
+49 silly addNameRange     '0.7.4',
+49 silly addNameRange     '0.7.5',
+49 silly addNameRange     '0.7.6',
+49 silly addNameRange     '0.7.7',
+49 silly addNameRange     '0.7.8',
+49 silly addNameRange     '0.8.0',
+49 silly addNameRange     '0.8.1',
+49 silly addNameRange     '0.8.2',
+49 silly addNameRange     '0.8.3',
+49 silly addNameRange     '0.8.4',
+49 silly addNameRange     '0.8.5',
+49 silly addNameRange     '0.8.6',
+49 silly addNameRange     '0.8.7',
+49 silly addNameRange     '0.8.8',
+49 silly addNameRange     '0.8.9',
+49 silly addNameRange     '0.8.10',
+49 silly addNameRange     '0.8.11',
+49 silly addNameRange     '0.8.12',
+49 silly addNameRange     '0.8.13',
+49 silly addNameRange     '0.8.14',
+49 silly addNameRange     '0.8.15',
+49 silly addNameRange     '0.9.0',
+49 silly addNameRange     '0.9.1',
+49 silly addNameRange     '0.9.2',
+49 silly addNameRange     '0.9.3',
+49 silly addNameRange     '0.9.4',
+49 silly addNameRange     '0.9.5',
+49 silly addNameRange     '0.9.6',
+49 silly addNameRange     '0.10.0-beta1',
+49 silly addNameRange     '0.10.0-beta2',
+49 silly addNameRange     '0.10.0-beta4',
+49 silly addNameRange     '0.10.0-beta5',
+49 silly addNameRange     '0.10.0-beta6',
+49 silly addNameRange     '0.10.0-beta7',
+49 silly addNameRange     '0.10.0-beta8',
+49 silly addNameRange     '0.10.0-beta9',
+49 silly addNameRange     '0.10.0-beta10',
+49 silly addNameRange     '0.10.0-beta11',
+49 silly addNameRange     '0.10.0-beta12',
+49 silly addNameRange     '0.10.0-beta13',
+49 silly addNameRange     '0.10.0-beta14',
+49 silly addNameRange     '0.10.0-beta15',
+49 silly addNameRange     '0.10.0-beta16',
+49 silly addNameRange     '0.10.0-beta17',
+49 silly addNameRange     '0.10.0-beta18',
+49 silly addNameRange     '0.10.0-beta19',
+49 silly addNameRange     '0.10.0-beta20',
+49 silly addNameRange     '0.10.0-beta21',
+49 silly addNameRange     '0.10.0-beta22',
+49 silly addNameRange     '0.10.0-beta23',
+49 silly addNameRange     '0.10.0-beta25',
+49 silly addNameRange     '0.10.0',
+49 silly addNameRange     '0.10.1',
+49 silly addNameRange     '0.10.2',
+49 silly addNameRange     '0.10.3',
+49 silly addNameRange     '0.10.4',
+49 silly addNameRange     '0.10.5',
+49 silly addNameRange     '0.10.6',
+49 silly addNameRange     '0.10.7',
+49 silly addNameRange     '0.10.8',
+49 silly addNameRange     '0.11.0-beta1',
+49 silly addNameRange     '0.11.0',
+49 silly addNameRange     '0.11.1',
+49 silly addNameRange     '0.12.0',
+49 silly addNameRange     '0.12.1',
+49 silly addNameRange     '0.12.2',
+49 silly addNameRange     '0.12.3',
+49 silly addNameRange     '0.12.4',
+49 silly addNameRange     '0.12.5',
+49 silly addNameRange     '0.12.6',
+49 silly addNameRange     '0.12.7',
+49 silly addNameRange     '0.12.8',
+49 silly addNameRange     '0.12.9',
+49 silly addNameRange     '0.12.10',
+49 silly addNameRange     '0.12.11',
+49 silly addNameRange     '0.12.12',
+49 silly addNameRange     '0.12.13',
+49 silly addNameRange     '0.12.14',
+49 silly addNameRange     '0.12.15',
+49 silly addNameRange     '0.12.16',
+49 silly addNameRange     '0.14.0',
+49 silly addNameRange     '0.14.1',
+49 silly addNameRange     '0.14.2',
+49 silly addNameRange     '0.14.3',
+49 silly addNameRange     '0.14.4',
+49 silly addNameRange     '0.14.5',
+49 silly addNameRange     '0.14.6',
+49 silly addNameRange     '0.14.7',
+49 silly addNameRange     '0.15.0',
+49 silly addNameRange     '0.15.1',
+49 silly addNameRange     '0.15.2',
+49 silly addNameRange     '0.15.3',
+49 silly addNameRange     '0.15.4',
+49 silly addNameRange     '0.15.5',
+49 silly addNameRange     '0.15.6',
+49 silly addNameRange     '0.15.7',
+49 silly addNameRange     '0.15.8',
+49 silly addNameRange     '0.15.9',
+49 silly addNameRange     '0.15.10' ] ]
+50 verbose addNamed [ 'pm2', '0.15.10' ]
+51 verbose addNamed [ '0.15.10', '0.15.10' ]
+52 silly lockFile 774ca5d8-pm2-0-15-10 pm2@0.15.10
+53 verbose lock pm2@0.15.10 /root/.npm/774ca5d8-pm2-0-15-10.lock
+54 silly lockFile a6d7d386-ry-npmjs-org-pm2-pm2-0-15-10-tgz https://registry.npmjs.org/pm2/-/pm2-0.15.10.tgz
+55 verbose lock https://registry.npmjs.org/pm2/-/pm2-0.15.10.tgz /root/.npm/a6d7d386-ry-npmjs-org-pm2-pm2-0-15-10-tgz.lock
+56 verbose addRemoteTarball [ 'https://registry.npmjs.org/pm2/-/pm2-0.15.10.tgz',
+56 verbose addRemoteTarball   '04383fdfc9bb1f7d10e2509cc17f64dd79052895' ]
+57 info retry fetch attempt 1 at 18:20:06
+58 verbose fetch to= /tmp/npm-3303-9hRO7T07/registry.npmjs.org/pm2/-/pm2-0.15.10.tgz
+59 http GET https://registry.npmjs.org/pm2/-/pm2-0.15.10.tgz
+60 http 200 https://registry.npmjs.org/pm2/-/pm2-0.15.10.tgz
+61 silly lockFile a6d7d386-ry-npmjs-org-pm2-pm2-0-15-10-tgz https://registry.npmjs.org/pm2/-/pm2-0.15.10.tgz
+62 silly lockFile a6d7d386-ry-npmjs-org-pm2-pm2-0-15-10-tgz https://registry.npmjs.org/pm2/-/pm2-0.15.10.tgz
+63 silly lockFile 774ca5d8-pm2-0-15-10 pm2@0.15.10
+64 silly lockFile 774ca5d8-pm2-0-15-10 pm2@0.15.10
+65 silly lockFile d1072219-pm2 pm2@
+66 silly lockFile d1072219-pm2 pm2@
+67 http 404 https://registry.npmjs.org/-
+68 silly registry.get cb [ 404,
+68 silly registry.get   { 'content-type': 'application/json',
+68 silly registry.get     'cache-control': 'max-age=0',
+68 silly registry.get     'content-length': '57',
+68 silly registry.get     'accept-ranges': 'bytes',
+68 silly registry.get     date: 'Tue, 29 Dec 2015 18:20:07 GMT',
+68 silly registry.get     via: '1.1 varnish',
+68 silly registry.get     age: '0',
+68 silly registry.get     connection: 'keep-alive',
+68 silly registry.get     'x-served-by': 'cache-sin6925-SIN',
+68 silly registry.get     'x-cache': 'MISS',
+68 silly registry.get     'x-cache-hits': '0',
+68 silly registry.get     'x-timer': 'S1451413206.473535,VS0,VE1102' } ]
+69 silly lockFile c75fe0d4- -@
+70 silly lockFile c75fe0d4- -@
+71 error 404 Not Found
+72 error System Linux 3.13.0-48-generic
+73 error command "/usr/bin/node" "/usr/bin/npm" "install" "-" "-g" "pm2"
+74 error cwd /usr/share/nginx/html/PreciseDeliveryRestApi
+75 error node -v v0.10.37
+76 error npm -v 1.4.28
+77 error code E404
+78 verbose exit [ 1, true ]

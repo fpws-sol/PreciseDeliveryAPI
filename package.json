@@ -1,0 +1,27 @@
+{
+  "name": "PreciseDeliveryRESTApi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  
+  "dependencies": {
+    "body-parser": "~1.10.2",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.1.1",
+    "express": "~4.11.1",    
+    "mongoose": "*",    
+    "bcrypt-nodejs" : "latest",
+    "moment-timezone":"*",
+    "express-validator":"*",
+    "morgan":"*",
+    "xml":"*",
+    "js2xmlparser":"*",
+    "passport":"*",
+    "cors":"*"
+
+      
+  }
+
+}
