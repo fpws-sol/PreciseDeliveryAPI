@@ -20,7 +20,8 @@ app.use(morgan('combined', {stream: accessLogStream}));
 var user = require('./controllers/user');
 var userrole = require('./controllers/userrole');
 var lab = require('./controllers/lab');
-
+var category = require('./controllers/category');
+var doctor = require('./controllers/doctor');
 
 
 app.use(bodyParser.json());
@@ -31,6 +32,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api/user', user);
 app.use('/api/userrole', userrole);
 app.use('/api/lab', lab);
+app.use('/api/category', category);
+app.use('/api/doctor', doctor);
 
 
 

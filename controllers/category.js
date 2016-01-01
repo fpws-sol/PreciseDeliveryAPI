@@ -50,7 +50,7 @@ router.post('/',auth.authorize, function(req, res, next) {
 	
 	var categoryname = req.body.categoryname;
 	var description = req.body.description;
-	var displayorder = req.body.streetaddress1;
+	var displayorder = req.body.displayorder;
 	
 	
 	var errors = req.validationErrors();
