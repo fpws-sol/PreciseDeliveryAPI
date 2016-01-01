@@ -6,7 +6,7 @@ var moment = require('moment-timezone');
 var CategorySchema = Schema({	
    	categoryname: { type : String, required : true },
 	description : { type: String },
-	displayorder : { type: Number }
+	displayorder : { type: Number },
 	isactive:{ type: Boolean, default: true },
 	isdeleted:{ type: Boolean, default: false }	
 	
