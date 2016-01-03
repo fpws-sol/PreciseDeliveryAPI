@@ -22,6 +22,7 @@ var userrole = require('./controllers/userrole');
 var lab = require('./controllers/lab');
 var category = require('./controllers/category');
 var doctor = require('./controllers/doctor');
+var driver = require('./controllers/driver');
 
 
 app.use(bodyParser.json());
@@ -34,6 +35,7 @@ app.use('/api/userrole', userrole);
 app.use('/api/lab', lab);
 app.use('/api/category', category);
 app.use('/api/doctor', doctor);
+app.use('/api/driver', driver);
 
 
 
