@@ -42,9 +42,15 @@ router.get('/:id', auth.authorize, function (req, res, next) {
 
 
 router.post('/', auth.authorize, function (req, res, next) {
+<<<<<<< HEAD
     req.check('name', 'doctor name should not be blank.').notEmpty();
 
     var title = req.body.name;
+=======
+    req.check('title', 'doctor name should not be blank.').notEmpty();
+
+    var title = req.body.title;
+>>>>>>> fe77df1badd02ea1411e6559b9cc6334750ba97b
     var streetaddress1 = req.body.streetaddress1;
     var streetaddress2 = req.body.streetaddress2;
     var city = req.body.city;
@@ -62,7 +68,11 @@ router.post('/', auth.authorize, function (req, res, next) {
     } else {
 
         DoctorModel.findOne({
+<<<<<<< HEAD
             "name": title,
+=======
+            "title": title,
+>>>>>>> fe77df1badd02ea1411e6559b9cc6334750ba97b
             "isactive": true,
             "isdeleted": false
         }, function (err, doctorExist) {
@@ -74,7 +84,11 @@ router.post('/', auth.authorize, function (req, res, next) {
             }
             else {
                 var _newdoctor = new DoctorModel({
+<<<<<<< HEAD
                     'name': name,
+=======
+                    'title': title,
+>>>>>>> fe77df1badd02ea1411e6559b9cc6334750ba97b
                     'streetaddress1': streetaddress1,
                     'streetaddress2': streetaddress2,
                     'city': city,
@@ -99,10 +113,17 @@ router.post('/', auth.authorize, function (req, res, next) {
 
 
 router.put('/', auth.authorize, function (req, res, next) {
+<<<<<<< HEAD
     req.check('name', 'name should not be blank.').notEmpty();
 
     var _doctorid = req.body.id;
     var name = req.body.name;
+=======
+    req.check('title', 'title should not be blank.').notEmpty();
+
+    var _doctorid = req.body.id;
+    var title = req.body.title;
+>>>>>>> fe77df1badd02ea1411e6559b9cc6334750ba97b
     var streetaddress1 = req.body.streetaddress1;
     var streetaddress2 = req.body.streetaddress2;
     var city = req.body.city;
@@ -120,7 +141,11 @@ router.put('/', auth.authorize, function (req, res, next) {
 
     } else {
         DoctorModel.findOne({
+<<<<<<< HEAD
             "title": name,
+=======
+            "title": title,
+>>>>>>> fe77df1badd02ea1411e6559b9cc6334750ba97b
             "isactive": true,
             "isdeleted": false,
             '_id': { $ne: _doctorid }
@@ -143,7 +168,11 @@ router.put('/', auth.authorize, function (req, res, next) {
                             '_id': _doctorid
                         }, {
                             $set: {
+<<<<<<< HEAD
                                 'title': name,
+=======
+                                'title': title,
+>>>>>>> fe77df1badd02ea1411e6559b9cc6334750ba97b
                                 'streetaddress1': streetaddress1,
                                 'streetaddress2': streetaddress2,
                                 'city': city,
@@ -196,6 +225,7 @@ router.delete('/:doctorid', auth.authorize, function (req, res, next) {
         }
     });
 });
+<<<<<<< HEAD
 router.get('/getdoctorbylabid/:id', auth.authorize, function (req, res, next) {
     var _labid = req.params.id;
     DoctorModel.find({
@@ -211,6 +241,9 @@ router.get('/getdoctorbylabid/:id', auth.authorize, function (req, res, next) {
         }
     })
 });
+=======
+
+>>>>>>> fe77df1badd02ea1411e6559b9cc6334750ba97b
 
 
 module.exports = router;
