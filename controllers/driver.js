@@ -9,7 +9,7 @@ var auth = require('../config/auth');
 
 
 
-router.get('/', function (req, res, next) {
+router.get('/', auth.authorize, function (req, res, next) {
     DriverModel.find({
         "isactive": true,
         "isdeleted": false
