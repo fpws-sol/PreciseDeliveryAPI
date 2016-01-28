@@ -100,8 +100,8 @@ router.put('/', auth.authorize, function (req, res, next) {
     var routedriver = req.body.routedriver;
     var routedrivercellno = req.body.routedrivercellno;
     var routenotes = req.body.routenotes;
-    var isdeleted = req.body.isdeleted;
-    var isactive = req.body.isactive;
+    var isdeleted = false;
+    var isactive = true;
     var errors = req.validationErrors();
     if (errors) {
 

@@ -6,11 +6,28 @@ var messages = require('../messages.js');
 var util = require('util');
 var expressValidator = require('express-validator');
 var auth = require('../config/auth');
+var mongoose = require('mongoose');
 
 
 
 router.get('/', auth.authorize, function (req, res, next) {
     DoctorModel.find({
+        "isactive": true,
+        "isdeleted": false
+    }).populate(["categories","lab"]).exec(function (err, doctors) {
+        if (err) {
+            return res.send(messages.CustomExceptionHandler("systemerror", err.message, req.headers.responsetype));
+        }
+        else {
+            return res.send(messages.CustomExceptionHandler("success", doctors, req.headers.responsetype));
+        }
+    });
+});
+
+router.get('/getdoctorsbyrouteid/:id', auth.authorize, function (req, res, next) {
+      var _categoryid = req.params.id;
+    DoctorModel.find({
+        "categories": mongoose.Types.ObjectId(_categoryid),
         "isactive": true,
         "isdeleted": false
     }).populate(["categories","attributes.lab"]).exec(function (err, doctors) {
@@ -30,7 +47,7 @@ router.get('/:id', auth.authorize, function (req, res, next) {
         "_id": _doctorid,
         "isactive": true,
         "isdeleted": false
-    }).populate(["categories","attributes.lab"]).exec(function (err, doctor) {
+    }).populate(["categories","lab"]).exec(function (err, doctor) {
         if (err) {
             return res.send(messages.CustomExceptionHandler("systemerror", err.message, req.headers.responsetype));
         }
@@ -42,9 +59,9 @@ router.get('/:id', auth.authorize, function (req, res, next) {
 
 
 router.post('/', auth.authorize, function (req, res, next) {
-    req.check('name', 'doctor name should not be blank.').notEmpty();
+    req.check('title', 'doctor name should not be blank.').notEmpty();
 
-    var title = req.body.name;
+    var title = req.body.title;
     var streetaddress1 = req.body.streetaddress1;
     var streetaddress2 = req.body.streetaddress2;
     var city = req.body.city;
@@ -52,7 +69,8 @@ router.post('/', auth.authorize, function (req, res, next) {
     var zip = req.body.zip;
     var phonenumber = req.body.phonenumber;
     var categories = req.body.categories;
-    var attributes = req.body.attributes;
+    var lab = req.body.lab;
+    var isregular = req.body.isregular;
 
 
     var errors = req.validationErrors();
@@ -62,7 +80,7 @@ router.post('/', auth.authorize, function (req, res, next) {
     } else {
 
         DoctorModel.findOne({
-            "name": title,
+            "title": title,
             "isactive": true,
             "isdeleted": false
         }, function (err, doctorExist) {
@@ -74,7 +92,7 @@ router.post('/', auth.authorize, function (req, res, next) {
             }
             else {
                 var _newdoctor = new DoctorModel({
-                    'name': name,
+                    'title': title,
                     'streetaddress1': streetaddress1,
                     'streetaddress2': streetaddress2,
                     'city': city,
@@ -82,7 +100,8 @@ router.post('/', auth.authorize, function (req, res, next) {
                     'zip': zip,
                     'phonenumber': phonenumber,
                     'categories': categories,
-                    'attributes': attributes
+                    'lab': lab,
+                    'isregular':isregular
 
                 });
                 _newdoctor.save(function (error) {
@@ -99,10 +118,10 @@ router.post('/', auth.authorize, function (req, res, next) {
 
 
 router.put('/', auth.authorize, function (req, res, next) {
-    req.check('name', 'name should not be blank.').notEmpty();
+    req.check('title', 'title should not be blank.').notEmpty();
 
     var _doctorid = req.body.id;
-    var name = req.body.name;
+    var title = req.body.title;
     var streetaddress1 = req.body.streetaddress1;
     var streetaddress2 = req.body.streetaddress2;
     var city = req.body.city;
@@ -110,7 +129,8 @@ router.put('/', auth.authorize, function (req, res, next) {
     var zip = req.body.zip;
     var phonenumber = req.body.phonenumber;
     var categories = req.body.categories;
-    var attributes = req.body.attributes;
+    var lab = req.body.lab;
+    var isregular = req.body.isregular;
     var isdeleted = req.body.isdeleted;
     var isactive = req.body.isactive;
     var errors = req.validationErrors();
@@ -120,7 +140,7 @@ router.put('/', auth.authorize, function (req, res, next) {
 
     } else {
         DoctorModel.findOne({
-            "title": name,
+            "title": title,
             "isactive": true,
             "isdeleted": false,
             '_id': { $ne: _doctorid }
@@ -143,13 +163,15 @@ router.put('/', auth.authorize, function (req, res, next) {
                             '_id': _doctorid
                         }, {
                             $set: {
-                                'title': name,
+                                'title': title,
                                 'streetaddress1': streetaddress1,
                                 'streetaddress2': streetaddress2,
                                 'city': city,
                                 'state': state,
                                 'zip': zip,
                                 'phonenumber': phonenumber,
+                                'lab': lab,
+                                'isregular':isregular,
                                 'isdeleted': isdeleted,
                                 'isactive': isactive
                             }

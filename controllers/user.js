@@ -59,7 +59,7 @@ var errors = req.validationErrors();
    		"password":req.body.password,
         "isactive": true,
         "isdeleted": false
-      }, function(err, user) {
+      }).populate(["userrole"]).exec(function (err, user) {
          if (err)
             return res.send(messages.CustomExceptionHandler("systemerror", err.message,req.headers.responsetype));
          else

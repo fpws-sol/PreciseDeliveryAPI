@@ -108,7 +108,7 @@ router.put('/',auth.authorize, function(req, res, next) {
 	
     }else{
 	CategoryModel.findOne({
-		"categoryname":name,
+		"categoryname":categoryname,
 		 "isactive": true,
          "isdeleted": false,
 		'_id':{$ne:_categoryid}
